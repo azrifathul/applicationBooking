@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Travekola</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <%- include('../partials/navbar', {role:role, userId:userId}) %>
+    <div class="container">
+      <% data.forEach((item) =>{ console.log(item.Booking) %>
+      <div class="item-container">
+        <img src="<%= item.image %>" />
+        <div class="item-info">
+          <h3 class="name"><%= item.name %></h3>
+          <h3 class="name"><%= item.Booking.total %></h3>
+        </div>
+        <div class="item-info">
+          <h3>Check In :</h3>
+          <h3 class="name"><%= item.Booking.check_in.slice(0,10) %></h3>
+        </div>
+        <div class="item-info">
+          <h3>Check Out :</h3>
+          <h3 class="name"><%= item.Booking.check_out.slice(0,10) %></h3>
+        </div>
+        <div class="item-info">
+          <h3>Night :</h3>
+          <h3 class="name"><%= item.Booking.night %></h3>
+        </div>
+        <div class="item-info">
+          <a
+            href="/booking/<%= item.Booking.UserId %>/<%= item.Booking.HotelId %>/delete"
+            >Delete</a
+          >
+        </div>
+      </div>
+      <% }) %>
+    </div>
+    <style>
+      * {
+        font-family: "Poppins", sans-serif;
+      }
+
+      .navbar-title {
+        color: #6c6a6a;
+        text-decoration: none;
+        margin-right: 16px;
+      }
+
+      .navbar {
+        display: flex;
+        align-items: center;
+        z-index: 2;
+        position: fixed;
+        height: 70px;
+        background: white;
+        top: 0;
+        box-shadow: rgba(229, 230, 234, 0.36) 0px 2px 6px 2px;
+        justify-content: space-between;
+        padding: 0 32px;
+        left: 0;
+        right: 0;
+      }
+
+      .right-column {
+        display: flex;
+        font-size: 14px;
+        width: 180px;
+        justify-content: space-around;
+      }
+
+      a {
+        margin-right: 4px;
+      }
+
+      .container {
+        font-family: "Poppins", sans-serif;
+        margin: 100px auto;
+        max-width: 983px;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: rgba(0, 0, 0, 0.1) 4px 5px 10px 4px;
+        display: flex;
+        flex-direction: column;
+        padding: 32px;
+      }
+
+      .item-container {
+        display: flex;
+        margin-bottom: 16px;
+        align-items: center;
+      }
+
+      .item-info {
+        display: flex;
+        flex-direction: column;
+        margin-left: 24px;
+      }
+
+      img {
+        width: 100px;
+        height: 100px;
+        border-radius: 16px;
+      }
+
+      .price {
+        color: #f15c60;
+      }
+
+      h3 {
+        margin: 4px !important;
+      }
+    </style>
+  </body>
+</html>

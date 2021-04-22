@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Travekola</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <%- include('../partials/navbar', {role:role}) %>
+    <div class="container">
+      <img
+        src="https://png.pngtree.com/element_our/20200703/ourlarge/pngtree-hand-drawn-cartoon-space-astronaut-vector-image_2300696.jpg"
+      />
+      <div class="form-container">
+        <form action="/hotels/<%= type %>/<%= data.id %>" method="post">
+          <h4>User Profile</h4>
+          <label>Name</label>
+          <input name="name" type="text" value="<%= data.name %>" />
+          <div class="errors-container"><%= errors.name %></div>
+          <label>Rating</label>
+          <input name="rating" type="number" value="<%= data.rating %>" />
+          <label>Location</label>
+          <input name="location" type="text" value="<%= data.location %>" />
+          <label>Price</label>
+          <input name="price" type="number" value="<%= data.price %>" />
+          <div class="errors-container"><%= errors.price %></div>
+          <label>Image Source</label>
+          <input name="image" type="text" value="<%= data.image %>" />
+          <button><%= type === 'edit'?'update' :'register' %> Hotel</button>
+        </form>
+      </div>
+    </div>
+    <style>
+      * {
+        font-family: "Poppins", sans-serif;
+      }
+
+      .navbar-title {
+        color: #6c6a6a;
+        text-decoration: none;
+        margin-right: 16px;
+      }
+
+      .navbar {
+        display: flex;
+        align-items: center;
+        z-index: 2;
+        position: fixed;
+        height: 70px;
+        background: white;
+        top: 0;
+        box-shadow: rgba(229, 230, 234, 0.36) 0px 2px 6px 2px;
+        justify-content: space-between;
+        padding: 0 32px;
+        left: 0;
+        right: 0;
+      }
+
+      .right-column {
+        display: flex;
+        font-size: 14px;
+        width: 180px;
+        justify-content: space-around;
+      }
+
+      .errors-container {
+        color: red;
+        font-size: 10px;
+      }
+      input {
+        height: 26px;
+        border-radius: 8px;
+        border: 1px solid #bfc9ca;
+        width: 300px;
+        font-size: 16px;
+        color: grey;
+        margin-bottom: 8px;
+        padding-left: 16px;
+      }
+
+      button {
+        width: 320px;
+        border-radius: 8px;
+        font-size: 16px;
+        background: #e74836;
+        color: white;
+        padding: 8px;
+        margin: 16px 0 32px;
+      }
+
+      .form-container {
+        width: 100%;
+        padding: 0 86px;
+      }
+
+      h4 {
+        text-align: center;
+        font-size: 20px;
+        width: 100%;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+      }
+
+      label {
+        font-size: 16px;
+        margin-bottom: 8px;
+      }
+
+      .container {
+        font-family: "Poppins", sans-serif;
+        margin: 100px auto;
+        max-width: 983px;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: rgba(0, 0, 0, 0.1) 4px 5px 10px 4px;
+        display: flex;
+      }
+
+      .container img {
+        height: 520px;
+      }
+    </style>
+  </body>
+</html>

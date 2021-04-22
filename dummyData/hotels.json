@@ -1,0 +1,16 @@
+[
+  {
+    "name": "Aston Pasteur",
+    "location": "Pasteur, Bandung",
+    "rating": 5,
+    "image": "https://ik.imagekit.io/tvlk/apr-asset/dgXfoyh24ryQLRcGq00cIdKHRmotrWLNlvG-TxlcLxGkiDwaUSggleJNPRgIHCX6/hotel/asset/10013360-900x600-FIT_AND_TRIM-0c6afd5bf3575450faf315be92fd5fad.jpeg?tr=q-40,w-300,h-300&_src=imagekit",
+    "price": 70000
+  },
+  {
+    "name": "el Hotel Bandung",
+    "location": "Merdeka, Bandung",
+    "rating": 3,
+    "image": "https://ik.imagekit.io/tvlk/apr-asset/dgXfoyh24ryQLRcGq00cIdKHRmotrWLNlvG-TxlcLxGkiDwaUSggleJNPRgIHCX6/hotel/asset/20017895-7283d6800c301956dd11d1063ad78168.jpeg?tr=q-40,w-300,h-300&_src=imagekit",
+    "price": 90000
+  }
+]

@@ -1,0 +1,21 @@
+<div class="navbar">
+  <div class="left-column">
+    <a class="navbar-title" href="/hotels">HOME</a>
+  </div>
+  <!-- <input /> -->
+  <div class="right-column">
+    <% if(role){ %>
+      <% if(role === 'user') {%>
+     <a class="navbar-title" href="/bookings">My Booking</a>
+     <a class="navbar-title" href="/myProfile">My Profile</a>
+     <a class="navbar-title" href="/logout">Logout</a>
+      <%} else {%>
+        <a class="navbar-title" href="/hotels/add">Add Hotels</a>
+        <a class="navbar-title" href="/logout"> Logout </a>
+        <% } %>
+    <% } else { %>
+      <a class="navbar-title" href="/login"> Login </a>
+
+    <% }%>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+[
+  {
+    "fullName": "Melisa Witaryo",
+    "email": "melisawitaryo@gmail.com",
+    "password": "melisa123",
+    "address": "Jl Danau Sunter Utr Perk Sunter Permai Bl A/16,Sunter Agung",
+    "phoneNumber": "0812759499178"
+  },
+  {
+    "fullName": "Dian Wijaya",
+    "email": "dianwijaya@gmail.com",
+    "password": "dian123",
+    "address": "Jl. Raya Berbek 46 Waru",
+    "phoneNumber": "0818064499178"
+  },
+  {
+    "fullName": "admin",
+    "email": "admin@gmail.com",
+    "password": "admin",
+    "address": "Jl. Raya Serang 46 Waru",
+    "phoneNumber": "08188828300178",
+    "role": "admin"
+  }
+
+]
