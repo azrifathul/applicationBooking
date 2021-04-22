@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const port = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000;
 const router = require("./routers/index");
 const session = require("express-session");
 
@@ -16,4 +16,4 @@ app.use(express.urlencoded({ extended: true }));
 app.use("/", router);
 app.get("/", (req, res) => res.redirect("/hotels"));
 
-app.listen(port, () => console.log("working"));
+app.listen(PORT, () => console.log("working"));
