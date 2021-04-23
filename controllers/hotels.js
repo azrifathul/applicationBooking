@@ -11,7 +11,7 @@ class Hotels {
         data.forEach((item) => {
           const instance = new Hotel();
 
-          item.price = moneyFormatter(item.price);
+          // item.price = moneyFormatter(item.price);
           item.name = instance.toUpperCaseByWord(item.name);
         });
         res.render("hotels/main", {
