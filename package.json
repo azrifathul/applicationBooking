@@ -17,5 +17,12 @@
   "bugs": {
     "url": "https://github.com/azrifathul/applicationBooking/issues"
   },
-  "homepage": "https://github.com/azrifathul/applicationBooking#readme"
+  "homepage": "https://github.com/azrifathul/applicationBooking#readme",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "pg": "^8.6.0",
+    "sequelize": "^6.6.2"
+  },
+  "devDependencies": {}
 }
