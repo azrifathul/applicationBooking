@@ -13,7 +13,7 @@ class Hotels {
           const instance = new Hotel();
 
           item.price = moneyFormatter(item.price);
-          // item.name = instance.toUpperCaseByWord(item.name);
+          item.name = instance.removeDot(item.name);
         });
         res.render("hotels/main", {
           data,

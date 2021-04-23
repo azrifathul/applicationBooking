@@ -11,16 +11,15 @@ module.exports = (sequelize, DataTypes) => {
       return bcrypt.hashSync(val, salt);
     }
 
-    toUpperCaseByWord(val) {
-      const splitted = val.split(" ").map((item) => {
-        return item[0].toUpperCase() + item.slice(1);
-      });
-
-      return splitted.join(" ");
+    removeDot(val) {
+      return val.replace(".", "");
     }
 
     static associate(models) {
-      Hotel.belongsToMany(models.User, { through: models.Booking, foreignKey: 'HotelId' })
+      Hotel.belongsToMany(models.User, {
+        through: models.Booking,
+        foreignKey: "HotelId",
+      });
     }
   }
   Hotel.init(
