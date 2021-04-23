@@ -9,17 +9,16 @@ class Hotels {
       order: [["id", "ASC"]],
     })
       .then((data) => {
-        // data.forEach((item) => {
-        //   const instance = new Hotel();
+        data.forEach((item) => {
+          const instance = new Hotel();
 
-        //   item.price = moneyFormatter(item.price);
-        //   item.name = instance.toUpperCaseByWord(item.name);
-        // });
-        // res.render("hotels/main", {
-        //   data,
-        //   role: req.session.role,
-        // });
-        res.send(data);
+          item.price = moneyFormatter(item.price);
+          // item.name = instance.toUpperCaseByWord(item.name);
+        });
+        res.render("hotels/main", {
+          data,
+          role: req.session.role,
+        });
       })
       .catch((err) => {
         res.send(err);
