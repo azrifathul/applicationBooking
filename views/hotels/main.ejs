@@ -31,7 +31,7 @@
                         </a>
                       </div>
                    <% } %>
-                   <% if(role !== 'admin'){ %>
+                   <% if(role === 'user'){ %>
                     <a href="/booking/<%=item.id%>" class="anchor-button">
                     <button class="booking-button">Booking Sekarang</button>
                   </a>
