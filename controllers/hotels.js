@@ -8,6 +8,7 @@ class Hotels {
       order: [["id", "ASC"]],
     })
       .then((data) => {
+        console.log(data);
         data.forEach((item) => {
           const instance = new Hotel();
 
@@ -19,7 +20,10 @@ class Hotels {
           role: req.session.role,
         });
       })
-      .catch((err) => res.send(err));
+      .catch((err) => {
+        console.log(err);
+        res.send(err);
+      });
   }
 
   static addDataHandler(req, res) {
