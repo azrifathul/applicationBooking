@@ -4,20 +4,21 @@ const session = require("express-session");
 const { moneyFormatter } = require("../helpers");
 class Hotels {
   static getDataHandler(req, res) {
+    console.log("trigger");
     Hotel.findAll({
       order: [["id", "ASC"]],
     })
       .then((data) => {
-        data.forEach((item) => {
-          const instance = new Hotel();
+        // data.forEach((item) => {
+        //   const instance = new Hotel();
 
-          // item.price = moneyFormatter(item.price);
-          item.name = instance.toUpperCaseByWord(item.name);
-        });
-        res.render("hotels/main", {
-          data,
-          role: req.session.role,
-        });
+        //   item.price = moneyFormatter(item.price);
+        //   item.name = instance.toUpperCaseByWord(item.name);
+        // });
+        // res.render("hotels/main", {
+        //   data,
+        //   role: req.session.role,
+        // });
         res.send(data);
       })
       .catch((err) => {
