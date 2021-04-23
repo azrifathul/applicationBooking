@@ -1,5 +1,5 @@
 const { Booking, Hotel, User } = require("../models");
-
+const uniqid = require("uniqid");
 class BookingController {
   static getBooking(req, res) {
     Booking.findOne({
@@ -43,10 +43,10 @@ class BookingController {
   }
 
   static confirmBooking(req, res) {
+    const nodemailer = require("nodemailer");
     const UserId = req.session.user.id;
     const HotelId = req.params.id;
     const { check_in, check_out, night } = req.body;
-
     Hotel.findByPk(Number(HotelId)).then((data) => {
       Booking.create({
         UserId: Number(UserId),
@@ -56,7 +56,41 @@ class BookingController {
         night: Number(night),
         total: Number(data.price) * night,
       })
-        .then(() => res.redirect("/bookings"))
+        .then(() => {
+          const transporter = nodemailer.createTransport({
+            service: "gmail",
+            auth: {
+              user: "asurisrat@gmail.com",
+              pass: "phmrakna10",
+            },
+          });
+
+          const mailOptions = {
+            from: "asurisrat@gmail.com",
+            to: req.session.user.email,
+            subject: "Booking Hotel App",
+            text: `
+            Hallo ${
+              req.session.user.fullName
+            }! Terimakasih telah melakukan booking di Hotel Kami, dengan total biaya Rp ${
+              Number(data.price) * night
+            }, pada tanggal ${check_in.slice(0, 10)} hingga ${check_out.slice(
+              0,
+              10
+            )}. dengan kode booking ${uniqid()}
+            `,
+          };
+
+          transporter.sendMail(mailOptions, function (error, info) {
+            if (error) {
+              console.log(error);
+            } else {
+              console.log("Email sent: " + info.response);
+            }
+          });
+
+          res.redirect("/bookings");
+        })
         .catch((err) => console.log(err));
     });
   }
