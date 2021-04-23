@@ -4,11 +4,11 @@ const session = require("express-session");
 const { moneyFormatter } = require("../helpers");
 class Hotels {
   static getDataHandler(req, res) {
+    console.log("trigger");
     Hotel.findAll({
       order: [["id", "ASC"]],
     })
       .then((data) => {
-        console.log(data);
         data.forEach((item) => {
           const instance = new Hotel();
 
