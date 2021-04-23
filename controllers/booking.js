@@ -20,6 +20,9 @@ class BookingController {
       include: [{ model: Hotel }],
     })
       .then((data) => {
+        data[0].Hotels.forEach((element) => {
+          element.Booking.total = User.moneyFormatter(element.Booking.total);
+        });
         res.render("users/bookings", {
           data: data[0].Hotels,
           role: req.session.role,

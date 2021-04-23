@@ -3,9 +3,9 @@ const moneyFormatter = (num) => {
     style: "currency",
     currency: "IDR",
   }).format(num);
-  const splitted = result.split(".");
-  const val = splitted[0].replace("IDR", "Rp").split(",").join(".");
-  return `${val},${splitted[1]}`;
+  // const splitted = result.split(".");
+  // const val = splitted[0].replace("IDR", "Rp").split(",").join(".");
+  return result;
 };
 
 module.exports = { moneyFormatter };

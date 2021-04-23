@@ -38,6 +38,7 @@
         <div class="item-info">
           <a
             href="/booking/<%= item.Booking.UserId %>/<%= item.Booking.HotelId %>/delete"
+            class="delete"
             >Delete</a
           >
         </div>
@@ -73,12 +74,20 @@
       .right-column {
         display: flex;
         font-size: 14px;
-        width: 180px;
+        width: 300px;
         justify-content: space-around;
       }
 
       a {
         margin-right: 4px;
+      }
+
+      .delete {
+        text-decoration: none;
+        color: white;
+        background: #f15c60;
+        padding: 6px 16px;
+        border-radius: 8px;
       }
 
       .container {
@@ -97,6 +106,7 @@
         display: flex;
         margin-bottom: 16px;
         align-items: center;
+        justify-content: space-between;
       }
 
       .item-info {
